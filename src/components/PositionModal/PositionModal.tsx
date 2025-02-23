@@ -131,6 +131,7 @@ export function PositionModal({
         </div>
 
         <DialogFooter className="text-xs text-muted-foreground">
+          Créditos: &nbsp;
           <a
             href={position.credits.url}
             target="_blank"
@@ -139,7 +140,6 @@ export function PositionModal({
           >
             {position.credits.source}
           </a>
-          Créditos:{" "}
         </DialogFooter>
       </DialogContent>
     </Dialog>
