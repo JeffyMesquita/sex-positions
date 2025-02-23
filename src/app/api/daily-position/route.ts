@@ -1,9 +1,5 @@
+import { positions } from "@/data/positions";
 import { NextResponse } from "next/server";
-import type { Position } from "@/types/position";
-
-const positions: Position[] = [
-  // Same as in the positions route
-];
 
 export async function GET() {
   const today = new Date();
