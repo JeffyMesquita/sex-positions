@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="dark">
       <body className={inter.className}>
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col max-w-screen-sm mx-auto">
           <main className="flex-grow">{children}</main>
           <Footer />
         </div>
