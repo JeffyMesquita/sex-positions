@@ -10,7 +10,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("daily");
 
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="mx-auto px-4 py-8">
       <h1 className="text-xl font-bold mb-8">
         Este é o <span className="text-red-600">Posições de Sexo!</span>
       </h1>
@@ -20,10 +20,10 @@ export default function Home() {
             Posição do Dia
           </TabsTrigger>
           <TabsTrigger value="random" className="text-xs">
-            Posição Aleatória
+            Aleatória
           </TabsTrigger>
           <TabsTrigger value="all" className="text-xs">
-            Todas as Posições
+            Todas
           </TabsTrigger>
         </TabsList>
         <TabsContent value="daily">
