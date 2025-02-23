@@ -1,0 +1,1 @@
+export { RandomPosition } from "./RandomPosition";
