@@ -44,8 +44,10 @@ export function RandomPosition() {
 
     setIsGenerating(false);
     // Generate new position
-    const randomIndex = Math.floor(Math.random() * positions.length);
-    setRandomPosition(positions[randomIndex]);
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * positions.length);
+      setRandomPosition(positions[randomIndex]);
+    }, 75);
   }, [controls, isGenerating]);
 
   return (
