@@ -94,7 +94,7 @@ export function RandomPosition() {
           disabled={isGenerating}
           className="w-full"
         >
-          {isGenerating ? "Generating..." : "Generate New Random Position"}
+          {isGenerating ? "Gerando" : "Gerar nova posição"}
         </Button>
       </div>
     </div>
