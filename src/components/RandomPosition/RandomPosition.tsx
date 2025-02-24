@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { PositionCard } from "../PositionCard";
+import { PositionCardBack } from "../PositionCardBack";
 import { positions } from "@/data/positions";
 import { Button } from "@/components/ui/button";
 
@@ -22,7 +23,7 @@ export function RandomPosition() {
 
     // Start the rotation animation
     await controls.start({
-      rotateY: 1800, // 5 full rotations
+      rotateY: 900, // 2.5 full rotations
       transition: {
         duration: 3,
         ease: [0.64, 0.57, 0.67, 1.53], // Custom easing function for deceleration
@@ -33,6 +34,15 @@ export function RandomPosition() {
     const randomIndex = Math.floor(Math.random() * positions.length);
     setRandomPosition(positions[randomIndex]);
 
+    // Complete the rotation
+    await controls.start({
+      rotateY: 1800, // 5 full rotations
+      transition: {
+        duration: 1.5,
+        ease: [0.64, 0.57, 0.67, 1.53],
+      },
+    });
+
     // Reset rotation
     controls.set({ rotateY: 0 });
 
@@ -40,28 +50,53 @@ export function RandomPosition() {
   }, [controls, isGenerating]);
 
   return (
-    <div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <motion.div
-          animate={controls}
-          style={{ transformStyle: "preserve-3d" }}
+    <div className="flex flex-col items-center">
+      <div className="w-full max-w-sm aspect-[3/4] mb-20">
+        <div
+          className="relative w-full h-full"
+          style={{ perspective: "1000px" }}
         >
-          <div style={{ backfaceVisibility: "hidden" }}>
-            <PositionCard position={randomPosition} />
-          </div>
-        </motion.div>
-      </motion.div>
-      <Button
-        onClick={generateNewRandomPosition}
-        className="mt-4 w-full"
-        disabled={isGenerating}
-      >
-        {isGenerating ? "Gerando..." : "Gerar nova posição"}
-      </Button>
+          <motion.div
+            animate={controls}
+            style={{
+              width: "100%",
+              height: "100%",
+              transformStyle: "preserve-3d",
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                backfaceVisibility: "hidden",
+              }}
+            >
+              <PositionCard position={randomPosition} />
+            </div>
+            <div
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                backfaceVisibility: "hidden",
+                transform: "rotateY(180deg)",
+              }}
+            >
+              <PositionCardBack />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+      <div className="w-full max-w-sm flex justify-center">
+        <Button
+          onClick={generateNewRandomPosition}
+          disabled={isGenerating}
+          className="w-full"
+        >
+          {isGenerating ? "Generating..." : "Generate New Random Position"}
+        </Button>
+      </div>
     </div>
   );
 }
