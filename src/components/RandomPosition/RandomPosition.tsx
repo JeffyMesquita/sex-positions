@@ -30,10 +30,6 @@ export function RandomPosition() {
       },
     });
 
-    // Generate new position
-    const randomIndex = Math.floor(Math.random() * positions.length);
-    setRandomPosition(positions[randomIndex]);
-
     // Complete the rotation
     await controls.start({
       rotateY: 1800, // 5 full rotations
@@ -47,6 +43,9 @@ export function RandomPosition() {
     controls.set({ rotateY: 0 });
 
     setIsGenerating(false);
+    // Generate new position
+    const randomIndex = Math.floor(Math.random() * positions.length);
+    setRandomPosition(positions[randomIndex]);
   }, [controls, isGenerating]);
 
   return (
