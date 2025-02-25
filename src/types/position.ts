@@ -24,7 +24,7 @@ export type Complexity = "crazy" | "easy" | "hard" | "medium";
 
 export type Activity = "man active" | "woman active";
 
-export type Stimulation = "clitoral" | "g-spot" | "none";
+export type Stimulation = "clitoral" | "g-spot" | "none" | "p-spot";
 
 export type Dangerousness = "none" | "safe" | "be careful";
 
@@ -42,6 +42,13 @@ export type Location =
   | "anywhere"
   | "other";
 
+export type Petting =
+  | "breast kissing"
+  | "breast touching"
+  | "hand clitoris stimulation"
+  | "kissing"
+  | "none";
+
 export type Position = {
   id: number;
   name: string;
@@ -52,6 +59,7 @@ export type Position = {
   location: Location;
   dangerousness: Dangerousness;
   complexity: Complexity;
+  petting: Petting[];
   activity: Activity[];
   stimulation: Stimulation[];
   credits: {
@@ -76,6 +84,7 @@ export const stimulationTranslations = {
   clitoral: "clitoriano",
   "g-spot": "ponto G",
   none: "nenhum",
+  "p-spot": "ponto P",
 };
 
 export const positionTypeTranslations = {
@@ -105,6 +114,14 @@ export const penetrationTranslations = {
   "no penetration": "sem penetração",
   deep: "profundo",
   middle: "médio",
+};
+
+export const pettingTranslations = {
+  "breast kissing": "beijar os seios",
+  "breast touching": "tocar os seios",
+  "hand clitoris stimulation": "estimulação",
+  kissing: "beijando",
+  none: "nenhum",
 };
 
 export const locationTranslations = {
