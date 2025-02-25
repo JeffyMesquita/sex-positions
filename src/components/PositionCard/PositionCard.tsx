@@ -60,19 +60,19 @@ export function PositionCard({ position, onClick }: PositionCardProps) {
               height={400}
               loading="lazy"
             />
-            <p className="text-xs text-stone-600 font-bold absolute top-2 right-2 bg-card rounded-md">
+            <span className="text-xs text-stone-600 font-bold absolute top-2 right-2 bg-card rounded-md">
               <Badge className={`${complexityColor}`} variant="secondary">
                 {complexityTranslations[position.complexity].toUpperCase()}
               </Badge>
-            </p>
+            </span>
 
-            <p className="text-xs text-stone-600 font-bold absolute top-2 left-2 bg-card rounded-md">
+            <span className="text-xs text-stone-600 font-bold absolute top-2 left-2 bg-card rounded-md">
               <Badge className={`${dangerousnessColor}`} variant="secondary">
                 {dangerousnessTranslations[
                   position.dangerousness
                 ].toUpperCase()}
               </Badge>
-            </p>
+            </span>
             <h3 className="font-semibold text-lg p-4">{position.name}</h3>
           </CardContent>
         </Card>
