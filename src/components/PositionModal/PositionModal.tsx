@@ -63,7 +63,7 @@ export function PositionModal({
           <Image
             src={position.image || "/placeholder.svg"}
             alt={position.name}
-            className="w-full h-64 object-cover rounded-md"
+            className="w-full h-80 object-cover rounded-md"
             width={400}
             height={400}
             loading="eager"
