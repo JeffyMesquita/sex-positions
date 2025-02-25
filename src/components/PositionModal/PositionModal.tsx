@@ -50,6 +50,7 @@ export function PositionModal({
     {
       none: "bg-stone-400 text-stone-800 border-stone-600 border",
       safe: "bg-green-400 text-green-800 border-green-600 border",
+      "be careful": "bg-yellow-400 text-yellow-800 border-yellow-600 border",
     }[position.dangerousness] || "bg-stone-400 text-stone-800 border-stone-600";
 
   return (
@@ -70,7 +71,7 @@ export function PositionModal({
           {onPrevious && (
             <Button
               onClick={onPrevious}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 rounded-full p-2"
+              className="absolute -left-4 top-1/2 transform -translate-y-1/2 rounded-full p-2"
               size="icon"
               variant="secondary"
             >
@@ -80,7 +81,7 @@ export function PositionModal({
           {onNext && (
             <Button
               onClick={onNext}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full p-2"
+              className="absolute -right-4 top-1/2 transform -translate-y-1/2 rounded-full p-2"
               size="icon"
               variant="secondary"
             >

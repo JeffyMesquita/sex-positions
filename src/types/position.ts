@@ -24,11 +24,11 @@ export type Complexity = "crazy" | "easy" | "hard" | "medium";
 
 export type Activity = "man active" | "woman active";
 
-export type Stimulation = "clitoral" | "g-spot";
+export type Stimulation = "clitoral" | "g-spot" | "none";
 
-export type Dangerousness = "none" | "safe";
+export type Dangerousness = "none" | "safe" | "be careful";
 
-export type Penetration = "no penetration";
+export type Penetration = "no penetration" | "deep" | "middle";
 
 export type Location =
   | "bed"
@@ -48,7 +48,7 @@ export type Position = {
   description: string;
   image: string;
   positionType: PositionType[];
-  penetration: Penetration;
+  penetration: Penetration[];
   location: Location;
   dangerousness: Dangerousness;
   complexity: Complexity;
@@ -75,6 +75,7 @@ export const activityTranslations = {
 export const stimulationTranslations = {
   clitoral: "clitoriano",
   "g-spot": "ponto G",
+  none: "nenhum",
 };
 
 export const positionTypeTranslations = {
@@ -102,6 +103,8 @@ export const positionTypeTranslations = {
 
 export const penetrationTranslations = {
   "no penetration": "sem penetração",
+  deep: "profundo",
+  middle: "médio",
 };
 
 export const locationTranslations = {
@@ -120,4 +123,5 @@ export const locationTranslations = {
 export const dangerousnessTranslations = {
   none: "Nenhum",
   safe: "Seguro",
+  "be careful": "Cuidado",
 };

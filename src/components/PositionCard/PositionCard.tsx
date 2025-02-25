@@ -33,6 +33,7 @@ export function PositionCard({ position, onClick }: PositionCardProps) {
     {
       none: "bg-stone-400 text-stone-800 border-stone-600 border",
       safe: "bg-green-400 text-green-800 border-green-600 border",
+      "be careful": "bg-yellow-400 text-yellow-800 border-yellow-600 border",
     }[position.dangerousness] || "bg-stone-400 text-stone-800 border-stone-600";
 
   const handleClick = () => {
